@@ -1,0 +1,347 @@
+/* Reset e Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #000000 100%);
+    background-attachment: fixed;
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px 60px;
+    position: relative;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 200;
+    letter-spacing: -3px;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+}
+
+.hero-title .highlight {
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.5px;
+    margin-top: 12px;
+}
+
+/* Cards Section */
+.cards-section {
+    padding: 80px 20px 120px;
+    background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 40px;
+    padding: 40px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    transform: translateY(-5px);
+}
+
+.card-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+.card-content .emoji {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+.button:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    text-align: center;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE FRIENDLY
+   ============================================ */
+
+/* Tablet (768px - 968px) */
+@media (max-width: 968px) {
+    .hero {
+        min-height: 70vh;
+        padding: 60px 30px 50px;
+    }
+
+    .cards-section {
+        padding: 60px 30px 80px;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .card {
+        padding: 35px;
+        min-height: 180px;
+    }
+
+    .card-content {
+        font-size: 18px;
+    }
+
+    .footer {
+        padding: 60px 20px;
+    }
+}
+
+/* Mobile Large (481px - 640px) */
+@media (max-width: 640px) {
+    .hero {
+        min-height: 60vh;
+        padding: 50px 20px 40px;
+    }
+
+    .hero-title {
+        letter-spacing: -2px;
+        margin-bottom: 16px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cards-section {
+        padding: 50px 20px 60px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .card {
+        border-radius: 30px;
+        padding: 30px;
+        min-height: 160px;
+    }
+
+    .card-content {
+        font-size: 17px;
+    }
+
+    .card-content .emoji {
+        font-size: 28px;
+    }
+
+    .button {
+        padding: 9px 20px;
+        font-size: 13px;
+    }
+
+    .footer {
+        padding: 50px 20px;
+        font-size: 13px;
+    }
+}
+
+/* Mobile Small (max 480px) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 16px 30px;
+        min-height: 50vh;
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .cards-section {
+        padding: 40px 16px 50px;
+    }
+
+    .cards-grid {
+        gap: 20px;
+    }
+
+    .card {
+        border-radius: 25px;
+        padding: 25px;
+        min-height: 150px;
+    }
+
+    .card-content {
+        font-size: 16px;
+        gap: 10px;
+    }
+
+    .card-content .emoji {
+        font-size: 26px;
+    }
+
+    .button {
+        padding: 8px 18px;
+        font-size: 12px;
+        margin-top: 8px;
+    }
+
+    .footer {
+        padding: 40px 16px;
+        font-size: 12px;
+    }
+}
+
+/* Mobile Extra Small (max 360px) */
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: clamp(2rem, 12vw, 3rem);
+    }
+
+    .card {
+        min-height: 140px;
+        padding: 20px;
+    }
+
+    .card-content {
+        font-size: 15px;
+    }
+
+    .card-content .emoji {
+        font-size: 24px;
+    }
+
+    .button {
+        padding: 7px 16px;
+        font-size: 11px;
+    }
+}
+
+/* Landscape mode ottimizzazione */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 80px 20px 40px;
+    }
+
+    .cards-section {
+        padding: 50px 20px 80px;
+    }
+}
+
+/* Touch device ottimizzazioni */
+@media (hover: none) and (pointer: coarse) {
+    .button {
+        padding: 12px 28px;
+        font-size: 14px;
+    }
+
+    .card:hover {
+        transform: none;
+    }
+
+    .button:hover {
+        transform: none;
+    }
+}
+
+/* Migliora performance su dispositivi mobili */
+@media (max-width: 968px) {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .card,
+    .button {
+        will-change: transform;
+    }
+}
